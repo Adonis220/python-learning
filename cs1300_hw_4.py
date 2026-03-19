@@ -111,4 +111,3 @@ CAMPUS CAFÉ ORDER SYSTEM
 menu_selection = input("Please select an item by entering the corresponding number: ")
 if menu_selection == "1":
     coffee_size = input("Select coffee size (small/medium/large): ").lower()
-    if 
