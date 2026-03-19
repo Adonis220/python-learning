@@ -1,0 +1,56 @@
+
+print("unit 1")
+print("""exercise 1:
+ Check comments in code for answer""")
+# Exercise 1 (Beginner): Choose the right loop type
+# For each scenario, write "for" or "while" and explain why.
+# Scenario 1: Print all months of the year.
+# Answer:for
+# Scenario 2: Keep rolling a die until you roll a 6.
+# Answer:while
+# Scenario 3: Print the squares of numbers 1 through 10.
+# Answer:for
+# Scenario 4: Ask the user for input until they type "quit".
+# Answer:while
+
+#exercise 2 
+print("Exercise 2")
+
+
+num = 1
+while num <=5:
+    print(num)
+    num += 1
+
+# exercise 3
+print("Exercise 3:")
+
+
+i = 0
+while i in range(5):
+    print(i)
+    i += 1
+print("unit 2")
+print("exercise 1:")
+print("check in code for exercise 1 answer")
+#exercise 1 part 1
+# while score < 100:
+    
+#exercise 1 part 2
+#while answer != "yes":
+
+#exercise 1 part 3
+#while health > 0 and game_over = FALSE:
+
+print("Exercise 2:")
+
+print("Exercise 3:")
+
+count=1
+value=1 
+while value <= 1000:
+    value *= 2
+    count += 1
+print("it took " + str(count) + " doubblings to exceed 1000")
+
+
