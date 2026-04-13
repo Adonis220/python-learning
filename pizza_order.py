@@ -28,7 +28,9 @@ while menu == "Y":
     ==============================
     """)
     break
-size = input("Select a size 1-4")
+
+
+
 
 
 
