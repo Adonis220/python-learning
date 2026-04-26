@@ -1,0 +1,162 @@
+'''
+1. B
+2. B
+3. C
+4. A
+5. B
+6. A
+7. C
+8. A
+9. B
+10. C
+11. B
+12. B
+13. C
+14. C
+15. C
+16. B
+17. A
+18. C
+19. B
+20. A
+Section 2
+1.T
+2.F
+3.T
+4.F
+5.T
+6.F
+7.F
+8.T
+9.T
+10.T
+section 3
+1.
+De Morgan’s Law is like this: there are two rules — “you can have a Lamborghini and a Ferrari” and “you can have a Lamborghini or a Ferrari.”
+
+First, let’s talk about “NOT,” which means something isn’t true.
+
+NOT (Lamborghini AND Ferrari) means it’s not true that you have both.
+So maybe you don’t have the Lamborghini, or you don’t have the Ferrari, or you don’t have either one.
+NOT (Lamborghini OR Ferrari) means it’s not true that you have either.
+So you don’t have the Lamborghini and you don’t have the Ferrari.
+
+The important idea is that when “NOT” goes over both things, it flips AND into OR, and OR into AND
+2.
+Short circuit evaluation means that the program stopped early if it already knows the outcome. it didn't crash because it already new that x != 0 is false and didn't execute the division by zero. 
+3.
+The order of conditions matters because it checks the conditions top down. in the context of the grades the higher scores can get lower grades because the program stops checking them too early.
+'''
+
+# Problem 1
+
+# Ask for imput 
+a = int(input("Enter value for a: "))
+b = int(input("Enter value for b: "))
+c = int(input("Enter value for c: "))
+
+# Evaluate expressions
+expr1 = a < b < c
+expr2 = not (a > b or b > c)
+expr3 = a <= b and b <= c
+
+# Print results
+print("a < b < c :", expr1)
+print("not (a > b or b > c) :", expr2)
+print("a <= b and b <= c :", expr3)
+
+# Compare expression 2 and 3
+if expr2 == expr3:
+    print("De Morgan's confirmed: Expressions 2 and 3 match!")
+else:
+    print("De Morgan's NOT confirmed: Expressions 2 and 3 do NOT match!")
+
+# Problem 2
+
+# Input
+temp = float(input("Enter temperature (°F): "))
+rain = input("Is it raining (yes/no): ").lower
+
+# Weather advisory system
+
+if temp > 100:
+    print("EXTREME HEAT WARNING: Stay indoors!")
+
+elif temp > 85:
+    if rain == "yes":
+        print("Warm rain — watch for flash floods.")
+    else:
+        print("Hot and dry — stay hydrated.")
+
+elif 60 <= temp <= 85:
+    if rain == "yes":
+        print("Grab an umbrella!")
+    else:
+        print("Nice weather — enjoy your day!")
+
+elif 32 <= temp < 60:
+    print("It's cold — bundle up!")
+
+else:  # temp < 32
+    print("FREEZE WARNING: Roads may be icy!")
+
+# Problem 3
+
+# Input
+name = input("Enter student name: ")
+e1 = float(input("Enter Exam 1 score: "))
+e2 = float(input("Enter Exam 2 score: "))
+e3 = float(input("Enter Exam 3 score: "))
+
+# Calculate average of exams 
+
+avg = (e1 + e2 + e3) / 3
+
+# Letter grade conversion step 
+if avg >= 90:
+    grade = "A"
+elif avg >= 87:
+    grade = "A-"
+elif avg >= 83:
+    grade = "B+"
+elif avg >= 80:
+    grade = "B"
+elif avg >= 77:
+    grade = "B-"
+elif avg >= 73:
+    grade = "C+"
+elif avg >= 70:
+    grade = "C"
+elif avg >= 67:
+    grade = "C-"
+elif avg >= 63:
+     grade = "D+"
+elif avg >= 60:
+    grade = "D"
+else:
+    grade = "F"
+
+# Student standing
+if avg >= 90:
+    status = "Dean's List"
+elif avg >= 70:
+    status = "Good Standing"
+elif avg >= 60:
+    status = "Academic Probation"
+else:
+    status = "Academic Suspension Warning"
+
+# Output report
+print("============================")
+print("STUDENT GRADE REPORT")
+print("============================")
+print("Student:", name)
+print("Exam 1:", e1)
+print("Exam 2:", e2)
+print("Exam 3:", e3)
+print("----------------------------")
+print(f"Average: {avg:.2f}")
+print("Grade:", grade)
+print("Status:", status)
+print("============================")
+

@@ -1,0 +1,200 @@
+# unit 1
+
+# Beginner exercise 
+
+# Create your RGB color tuple here
+rgb_color = (255, 128, 0)
+
+# Print each color channel
+print(rgb_color[0])  # Red
+print(rgb_color[1])  # Green
+print(rgb_color[2])  # Blue
+
+# Create palette list and add color
+palette = []
+palette.append(rgb_color)
+
+# Print the palette
+print(palette)
+
+# Intermediate exercise 
+
+# Create student tuples
+student1 = ("Alice", "A", 20)
+student2 = ("Bob", "B", 19)
+student3 = ("Charlie", "A-", 21)
+
+# Store in classroom list
+classroom = [student1, student2, student3]
+
+# Print second student's name using double subscripting
+print(classroom[1][0])
+
+# Unpack first student's information
+name, grade, age = classroom[0]
+
+# Print formatted message
+print(f"{name} is {age} years old and has a grade of {grade}.")
+
+# Advanced exercise
+
+# Create original student tuple
+student = ("Alice", [85, 90, 88], 0)
+
+# Add fourth exam score
+student[1].append(92)
+
+# Calculate new average
+average = sum(student[1]) / len(student[1])
+
+# Create new tuple with updated final grade
+updated_student = (student[0], student[1], average)
+
+# Print both tuples
+print("Original tuple:", student)
+print("Updated tuple:", updated_student)
+
+# unit 2
+
+# Create a list of three homework grades
+grades = [78, 85, 90]
+
+# Create a tuple for today's date (month, day, year)
+today = (4, 26, 2026)
+
+# Function to boost grades
+def boost_grades(grades_list):
+    for i in range(len(grades_list)):
+        grades_list[i] += 5
+    return grades_list
+
+# Call the function and print the result
+boosted = boost_grades(grades)
+print("Boosted grades:", boosted)
+
+# intermediate exercise
+# Create a list of three homework grades
+grades = [78, 85, 90]
+
+# Create a tuple for today's date (month, day, year)
+today = (4, 26, 2026)
+
+# Function to boost grades
+def boost_grades(grades_list):
+    for i in range(len(grades_list)):
+        grades_list[i] += 5
+    return grades_list
+
+# Call the function and print the result
+boosted = boost_grades(grades)
+print("Boosted grades:", boosted)
+
+# Advanced exercise 
+
+# Function to calculate statistics
+def calculate_statistics(*args):
+    count = len(args)
+    total = sum(args)
+    average = total / count if count > 0 else 0
+    return (count, total, average)
+
+# Function to update student records
+def update_student_records(students, bonus):
+    updated = []
+    for name, grade in students:
+        new_grade = grade + bonus
+        updated.append((name, new_grade))  # create a new tuple
+    return updated
+
+# Original student records
+students = [("Alice", 85), ("Bob", 78), ("Charlie", 90)]
+
+# Update grades with a bonus
+updated_students = update_student_records(students, 5)
+
+# Extract updated grades to pass into statistics function
+grades = [grade for _, grade in updated_students]
+
+# Calculate statistics using unpacking
+stats = calculate_statistics(*grades)
+
+# Print results
+print("Original records:", students)
+print("Updated records:", updated_students)
+print("Statistics (count, sum, average):", stats)
+
+# unit 3
+
+# beginner exercise 
+
+# Create a 3x3 grid (nested list)
+grid = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+
+# Print the entire grid
+print("Full grid:", grid)
+
+# Print the center number using double indexing
+print("Center value:", grid[1][1])
+
+# Use nested loops to print each row on a separate line
+print("Grid by rows:")
+for row in grid:
+    for value in row:
+        print(value, end=" ")
+    print()
+
+# intermediate 
+
+# Original list of scores
+scores = [45, 78, 92, 61, 88, 73, 55, 90, 82]
+
+# Create list of passing grades (60 or above)
+passing_grades = [score for score in scores if score >= 60]
+
+# Convert passing grades to letter grades
+letter_grades = [
+    'A' if score >= 90 else
+    'B' if score >= 80 else
+    'C' if score >= 70 else
+    'D'
+    for score in passing_grades
+]
+
+# Print results
+print("Passing grades:", passing_grades)
+print("Letter grades:", letter_grades)
+
+# advanced 
+
+# Create a 4x4 multiplication table using nested list comprehension
+table = [[row * col for col in range(1, 5)] for row in range(1, 5)]
+
+# Print the table in a formatted way
+print("Multiplication Table:")
+for row in table:
+    for value in row:
+        print(f"{value:3}", end=" ")
+    print()
+
+# Function to sum diagonal elements
+def sum_diagonal(matrix):
+    return sum(matrix[i][i] for i in range(len(matrix)))
+
+# Test the function
+diagonal_sum = sum_diagonal(table)
+print("\nDiagonal sum:", diagonal_sum)
+
+# Generator expression for even numbers in the table
+even_numbers = (value for row in table for value in row if value % 2 == 0)
+
+# Print first 5 even numbers
+print("\nFirst 5 even numbers:")
+for i, num in enumerate(even_numbers):
+    if i == 5:
+        break
+    print(num)
+
